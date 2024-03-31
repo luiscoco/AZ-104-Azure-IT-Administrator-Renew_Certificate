@@ -3,9 +3,13 @@
 ## Question 1
 
 You plan to deploy the following Azure web apps:
+
 WebApp1, that runs on Windows Server 2016
+
 WebApp2, that runs on Windows Server 2022
+
 WebApp3, that runs on Ubuntu Server
+
 WebApp4, that runs on Red Hat Enterprise Linux
 
 You need to create the app service plans for the web apps.
@@ -14,17 +18,19 @@ What is the minimum number of app service plans that should be created?
 
 Select only one answer.
 
-1
+- 1
 
-2
+- 2
 
-3
+- 3
 
-4
+- 4
 
-ChatGPT
+**Answer**:
 
-When deploying web apps on Azure App Service, the choice of the operating system is made at the App Service plan level, not at the individual web app level. All apps in the same App Service plan run on the same operating system. Azure App Service supports Windows and Linux operating systems, but it does not allow mixing Windows and Linux apps within the same App Service plan.
+When deploying web apps on Azure App Service, the choice of the operating system is made at the App Service plan level, not at the individual web app level. 
+
+All apps in the same App Service plan run on the same operating system. Azure App Service supports Windows and Linux operating systems, but it does not allow mixing Windows and Linux apps within the same App Service plan.
 
 Given your requirements:
 
@@ -38,13 +44,20 @@ WebApp4 runs on Red Hat Enterprise Linux (RHEL).
 
 Considering the operating systems:
 
-Both WebApp1 and WebApp2 run on Windows, but Azure App Service does not differentiate between different versions of Windows Server (e.g., 2016 vs. 2022) at the App Service plan level. They can be hosted on the same Windows-based App Service plan.
+Both WebApp1 and WebApp2 run on Windows, but Azure App Service does not differentiate between different versions of Windows Server (e.g., 2016 vs. 2022) at the App Service plan level.
 
-WebApp3 and WebApp4 both run on Linux, albeit different distributions (Ubuntu and RHEL). Azure App Service treats Linux apps the same regardless of the distribution, meaning they can share the same Linux-based App Service plan.
+They can be hosted on the same Windows-based App Service plan.
+
+WebApp3 and WebApp4 both run on Linux, albeit different distributions (Ubuntu and RHEL). 
+
+Azure App Service treats Linux apps the same regardless of the distribution, meaning they can share the same Linux-based App Service plan.
+
 Therefore, the minimum number of App Service plans required is:
 
 1 App Service plan for Windows-based apps (both WebApp1 and WebApp2 can be deployed here).
+
 1 App Service plan for Linux-based apps (both WebApp3 and WebApp4 can be deployed here).
+
 In total, 2 App Service plans are needed to meet the deployment requirements for all four web apps.
 
 ## Question 2
@@ -63,28 +76,35 @@ Continuous deployment: Disable
 
 You need to ensure that you can integrate WebApp1 with GitHub Actions.
 
-Which setting should you modify?
+Which setting should you modify?. Select only one answer.
 
-Select only one answer.
+- Continuous deployment
 
-Continuous deployment
+- Operating system
 
-Operating system
+- Publish
 
-Publish
+- Runtime stack
 
-Runtime stack
+**Answer**
 
-ChatGPT
-To ensure that you can integrate an Azure web app with GitHub Actions, the key setting you need to focus on is Continuous deployment. GitHub Actions allows for the automation of your CI/CD pipeline, which includes continuous integration and continuous deployment.
+To ensure that you can integrate an Azure web app with GitHub Actions, the key setting you need to focus on is Continuous deployment. 
 
-The "Continuous deployment" option in the context of Azure App Service refers to the ability to automatically deploy new versions of your application whenever changes are made to the connected source code repository. By enabling continuous deployment, you can set up a workflow with GitHub Actions that automatically builds and deploys your application to Azure App Service whenever you push changes to your repository on GitHub.
+GitHub Actions allows for the automation of your CI/CD pipeline, which includes continuous integration and continuous deployment.
+
+The "Continuous deployment" option in the context of Azure App Service refers to the ability to automatically deploy new versions of your application whenever changes are made to the connected source code repository. 
+
+By enabling continuous deployment, you can set up a workflow with GitHub Actions that automatically builds and deploys your application to Azure App Service whenever you push changes to your repository on GitHub.
 
 So, the setting you should modify is:
 
-Continuous deployment
+**Continuous deployment**
 
-By enabling this, you will be able to integrate WebApp1 with GitHub Actions for the automation of deployments. This does not imply that you can't use GitHub Actions with continuous deployment disabled; you still can set up GitHub Actions for CI/CD. However, enabling continuous deployment in Azure makes the integration more seamless and directly supported through the Azure portal and its GitHub Actions integration features.
+By enabling this, you will be able to integrate WebApp1 with GitHub Actions for the automation of deployments. 
+
+This does not imply that you can't use GitHub Actions with continuous deployment disabled; you still can set up GitHub Actions for CI/CD. 
+
+However, enabling continuous deployment in Azure makes the integration more seamless and directly supported through the Azure portal and its GitHub Actions integration features.
 
 ## Question 3
 
@@ -574,7 +594,9 @@ Therefore, the correct answers are:
 
 NIC1
 Subnet1
-User
+
+## Question 15
+
 You have an Azure virtual network named VNET1 that has an IP address space of 192.168.0.0/16 and the following subnets:
 
 Subnet1- has an IP address range of 192.168.1.0/24 and is connected to 15 VMs
@@ -611,7 +633,8 @@ Therefore, the correct answer is:
 
 Add a new subnet to VNET1.
 
-User
+## Question 16
+
 You have a Recovery Services vault named Vault1 that has soft delete enabled.
 
 Vault1 stores backups for the following Azure resources:
@@ -643,10 +666,8 @@ VM1, share1, and SQL1
 
 This means that soft delete, when enabled, provides protection for backups of Azure Virtual Machines, Azure file shares, and SQL Server on Azure Virtual Machines, allowing these backups to be recoverable for a period of time even after deletion.
 
+## Question 17
 
-2 / 2
-
-User
 You have a Recovery Services vault named Recovery1 that includes a backup policy named Policy1.
 
 You back up several Azure virtual machines to Recovery1 by using Policy1.
@@ -681,7 +702,8 @@ Therefore, the correct action to take first is:
 
 Create an Azure Log Analytics workspace.
 
-User
+## Question 18
+
 You recently create an Azure virtual machine standard backup policy.
 
 You need to configure a retention period for virtual machine instant recovery snapshots.
@@ -710,8 +732,10 @@ Given the choices you've asked to choose from and considering my latest training
 
 For the purpose of answering based on the context you're asking—assuming the question might be aiming towards a broader or differently structured policy not specifically mentioned in my last update—the mentioned durations (5, 7, 14, 30) could reflect changes or different aspects of backup retention policies that are not specific to instant recovery snapshots. It's important to refer directly to Azure documentation or the service itself for the most current capabilities and limits.
 
-User
+
+
 which option I choose 5, 7, 14 or 30
+
 ChatGPT
 Given the maximum retention period for instant recovery snapshots of Azure VM backups was not directly available in my last update, and considering your options (5, 7, 14, 30), it seems there might have been a mix-up or a misunderstanding regarding the context of instant recovery snapshot retention versus longer-term backup data retention in Azure Recovery Services Vaults.
 
@@ -725,7 +749,8 @@ Since you're looking to choose among the provided options under the assumption i
 
 This choice would offer the longest retention period among the options you provided, suitable for a broad range of backup strategies. Remember, for specific features like instant recovery snapshots, it's best to consult the current Azure documentation or the Azure portal directly for the most accurate and up-to-date information.
 
-User
+## Question 19
+
 You have the following Azure resources:
 
 a virtual machine named VM1
@@ -768,7 +793,8 @@ The correct answer is:
 
 7
 
-User
+## Question 20
+
 You have an Azure subscription that contains the following resources:
 
 A resource group named RG1 in the West US region
@@ -819,7 +845,8 @@ VNet1 only
 
 This choice aligns with both the geographical and organizational constraints provided in your scenario.
 
-User
+## Question 21
+
 Your company has an Azure subscription.
 
 You plan to create a virtual machine scale set named VMSS1 that has the following settings:
@@ -856,7 +883,8 @@ Therefore, the correct answer is:
 
 Orchestration mode
 
-User
+## Question 22
+
 You have an Azure subscription named Sub1.
 
 You plan to deploy a virtual machine scale set named VMSS1 in East US region. VMSS1 will have 8 instances.
@@ -887,7 +915,8 @@ Therefore, the correct answer is:
 
 3
 
-User
+## Question 23
+
 You have an Azure subscription.
 
 You plan to use fault domains.
@@ -924,7 +953,8 @@ Therefore, to configure fault domains directly, you would use:
 
 Availability set
 
-User
+## Question 24
+
 You have a Microsoft Entra tenant that contains the following users:
 
 User1 has a Department set to Sales and a Country set to USA
@@ -977,7 +1007,8 @@ User1 and User2 only
 
 This interpretation strictly follows logical operation precedence, which might not match the intuitive grouping intended without explicit parentheses. In practice, when creating dynamic membership rules in Microsoft Entra (formerly Azure AD), it's crucial to use parentheses to clearly define the logic, especially when mixing AND and OR conditions.
 
-User
+## Question 25
+
 You have a Microsoft Entra tenant named contoso.com that contains a user named Ben Smith.
 
 You configure a Password protection for contoso.com that includes the following Custom banned passwords settings:
@@ -1016,7 +1047,8 @@ Based on the criteria and the explanation above, the password that can be used b
 
 FgRs01
 
-User
+## Question 26
+
 You have a Microsoft Entra tenant.
 
 You create a user named Admin1.
