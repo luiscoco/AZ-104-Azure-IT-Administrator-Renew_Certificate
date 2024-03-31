@@ -54,11 +54,11 @@ Azure App Service treats Linux apps the same regardless of the distribution, mea
 
 Therefore, the minimum number of App Service plans required is:
 
-1 App Service plan for Windows-based apps (both WebApp1 and WebApp2 can be deployed here).
+**1 App Service plan for Windows-based apps** (both WebApp1 and WebApp2 can be deployed here).
 
-1 App Service plan for Linux-based apps (both WebApp3 and WebApp4 can be deployed here).
+**1 App Service plan for Linux-based apps** (both WebApp3 and WebApp4 can be deployed here).
 
-In total, 2 App Service plans are needed to meet the deployment requirements for all four web apps.
+In total, **2 App Service plans** are needed to meet the deployment requirements for all four web apps.
 
 ## Question 2
 
@@ -92,7 +92,7 @@ To ensure that you can integrate an Azure web app with GitHub Actions, the key s
 
 GitHub Actions allows for the automation of your CI/CD pipeline, which includes continuous integration and continuous deployment.
 
-The "Continuous deployment" option in the context of Azure App Service refers to the ability to automatically deploy new versions of your application whenever changes are made to the connected source code repository. 
+The "**Continuous deployment**" option in the context of Azure App Service refers to the ability to automatically deploy new versions of your application whenever changes are made to the connected source code repository. 
 
 By enabling continuous deployment, you can set up a workflow with GitHub Actions that automatically builds and deploys your application to Azure App Service whenever you push changes to your repository on GitHub.
 
@@ -127,26 +127,32 @@ Isolated I1V2
 Production P1V2
 
 Production P3V3
-ChatGPT
+
+**Answer**
+
 To prepare the environment for the planned web app (WebApp1) and deploy it to a virtual network (VNet1) in Azure while minimizing costs, you should choose an App Service plan that supports integration with Azure Virtual Network at the lowest possible cost.
 
 The key requirements for integrating an Azure Web App with an Azure Virtual Network are:
 
 The ability to use Azure VNet Integration, which requires a Standard, Premium, or Isolated tier.
+
 Cost minimization, which means selecting the least expensive option that meets the requirement.
+
 Given the options:
 
-Dev / Test B1: This is a Basic tier plan. Although cost-effective, the Basic tier does not support VNet Integration, so it cannot meet the requirement to deploy the web app to VNet1.
+**Dev/Test B1**: This is a Basic tier plan. Although cost-effective, the Basic tier does not support VNet Integration, so it cannot meet the requirement to deploy the web app to VNet1.
 
-Dev / Test F1: This is a Free tier plan. It’s the most cost-effective since it’s free, but like the Basic tier, it does not support VNet Integration.
+**Dev/Test F1**: This is a Free tier plan. It’s the most cost-effective since it’s free, but like the Basic tier, it does not support VNet Integration.
 
-Isolated I1V2: The Isolated tier supports VNet Integration and provides the highest level of resources and features, including dedicated (isolated) resources for your app. However, it's far from cost-minimizing due to its high price point.
+**Isolated I1V2**: The Isolated tier supports VNet Integration and provides the highest level of resources and features, including dedicated (isolated) resources for your app. However, it's far from cost-minimizing due to its high price point.
 
-Production P1V2: This is a Premium tier plan. Premium plans support VNet Integration and offer a balance of features and costs. It's less expensive than the Isolated tier while still meeting the requirements.
+**Production P1V2**: This is a Premium tier plan. Premium plans support VNet Integration and offer a balance of features and costs. It's less expensive than the Isolated tier while still meeting the requirements.
 
-Production P3V3: Another Premium tier plan but with more resources than P1V2, and consequently, it's more expensive. It offers higher compute resources than P1V2 but is not the most cost-effective choice for minimizing costs.
+**Production P3V3**: Another Premium tier plan but with more resources than P1V2, and consequently, it's more expensive. It offers higher compute resources than P1V2 but is not the most cost-effective choice for minimizing costs.
 
-To minimize costs while ensuring the ability to deploy the web app to VNet1 with VNet Integration, the Production P1V2 plan is the most appropriate choice. It offers a balance between cost and the necessary features, including support for VNet Integration, without the higher costs associated with the Isolated tier or the higher-end Premium tier options.
+To minimize costs while ensuring the ability to deploy the web app to VNet1 with VNet Integration, the **Production P1V2** plan is the most appropriate choice.
+
+It offers a balance between cost and the necessary features, including support for VNet Integration, without the higher costs associated with the Isolated tier or the higher-end Premium tier options.
 
 ## Question 4
 
@@ -156,35 +162,43 @@ A user named User1 has the Contributor role for Contoso2022.
 
 You need to ensure that User1 can create additional deployment slots to Contoso2022.
 
-What should you do?
+What should you do? Select only one answer.
 
-Select only one answer.
+- Assign User1 the Owner role for Contoso2022.
 
-Assign User1 the Owner role for Contoso2022.
+- Assign User1 the Website Contributor role for Contoso2022.
 
-Assign User1 the Website Contributor role for Contoso2022.
+- Scale out the Contoso2022 App Service plan.
 
-Scale out the Contoso2022 App Service plan.
+- Scale up the Contoso2022 App Service plan.
 
-Scale up the Contoso2022 App Service plan.
-ChatGPT
+**Answer**
+
 In Azure, the ability to create additional deployment slots for an Azure web service (App Service) is determined by two main factors: the user's permissions and the App Service plan's tier.
 
-The number of slots available is determined by the App Service plan's tier. The Standard, Premium, and Isolated tiers support multiple deployment slots (5 for Standard, 20 for Premium, and Isolated). Since Contoso2022 is already in the Standard App Service plan and has five deployment slots in use, the focus shifts to how to enable User1 to create additional deployment slots beyond the current limit.
+The number of slots available is determined by the App Service plan's tier. The Standard, Premium, and Isolated tiers support multiple deployment slots (5 for Standard, 20 for Premium, and Isolated).
+
+Since Contoso2022 is already in the Standard App Service plan and has five deployment slots in use, the focus shifts to how to enable User1 to create additional deployment slots beyond the current limit.
 
 Given the options:
 
-Assign User1 the Owner role for Contoso2022: Assigning the Owner role would indeed grant User1 broader permissions, including the ability to manage access and resources fully. However, it does not directly address the limit on the number of deployment slots, which is a limitation of the App Service plan tier rather than a permissions issue.
+Assign User1 the Owner role for Contoso2022: Assigning the Owner role would indeed grant User1 broader permissions, including the ability to manage access and resources fully. 
 
-Assign User1 the Website Contributor role for Contoso2022: This role allows for managing web apps but not the App Service plan itself. It wouldn't enable User1 to increase the number of deployment slots because the limitation is due to the App Service plan's tier, not a lack of permissions on the web app.
+However, it does not directly address the limit on the number of deployment slots, which is a limitation of the App Service plan tier rather than a permissions issue.
 
-Scale out the Contoso2022 App Service plan: Scaling out refers to adding more instances to handle additional load. It does not affect the number of deployment slots available.
+Assign User1 the Website Contributor role for Contoso2022: This role allows for managing web apps but not the App Service plan itself. 
 
-Scale up the Contoso2022 App Service plan: Scaling up means moving to a higher tier of the App Service plan. Since the Standard plan already allows for up to 5 deployment slots and this limit has been reached, moving to a higher tier (Premium) would increase the limit on the number of deployment slots available (up to 20 slots in the Premium tier).
+It wouldn't enable User1 to increase the number of deployment slots because the limitation is due to the App Service plan's tier, not a lack of permissions on the web app.
+
+**Scale out the Contoso2022 App Service plan**: Scaling out refers to adding more instances to handle additional load. It does not affect the number of deployment slots available.
+
+**Scale up the Contoso2022 App Service plan**: Scaling up means moving to a higher tier of the App Service plan. 
+
+Since the Standard plan already allows for up to 5 deployment slots and this limit has been reached, moving to a higher tier (Premium) would increase the limit on the number of deployment slots available (up to 20 slots in the Premium tier).
 
 Therefore, to ensure that User1 can create additional deployment slots for Contoso2022, the correct action would be to:
 
-Scale up the Contoso2022 App Service plan.
+**Scale up the Contoso2022 App Service plan**.
 
 This action increases the number of slots by upgrading to a higher service plan tier that supports more deployment slots, which is the fundamental requirement to allow for more slots.
 
@@ -194,66 +208,85 @@ You have an Azure container registry that stores an image named Image1 and a Win
 
 You need to ensure that you can run Image1 in VM1.
 
-What should you install in VM1?
+What should you install in VM1?. Select only one answer.
 
-Select only one answer.
+- Azure Portal
 
-Azure Portal
+- Docker
 
-Docker
+- Hyper-V role
 
-Hyper-V role
+- .NET Framework 4.7
 
-.NET Framework 4.7
-ChatGPT
-To run a container image (such as Image1 stored in an Azure container registry) on a Windows Server 2022 Azure virtual machine (VM1), you need container runtime software that can manage and run container images. Docker is the most widely used container runtime, enabling you to create, deploy, and run containers on a single operating system kernel.
+**Answer**
 
-Here's why Docker is the correct choice:
+To run a container image (such as Image1 stored in an Azure container registry) on a Windows Server 2022 Azure virtual machine (VM1), you need container runtime software that can manage and run container images. 
 
-Azure Portal is a web-based management console for Azure services and cannot be installed on a VM to run container images.
-Docker provides the necessary runtime environment to run containers. It allows you to pull container images from a container registry (like Azure Container Registry) and run them on your VM.
-Hyper-V role is used to create and manage virtual machines. While containers can run on virtual machines, Hyper-V itself is not required to run containers. Containers and virtual machines serve different purposes and have different use cases.
-.NET Framework 4.7 is a software framework developed by Microsoft that runs primarily on Microsoft Windows. It is not required for running containerized applications unless the container specifically requires it to run a .NET application.
+Docker is the most widely used container runtime, enabling you to create, deploy, and run containers on a single operating system kernel.
+
+Here's why **Docker is the correct choice:
+
+**Azure Portal** is a web-based management console for Azure services and cannot be installed on a VM to run container images.
+
+**Docker** provides the necessary runtime environment to run containers. 
+
+It allows you to pull container images from a container registry (like Azure Container Registry) and run them on your VM.
+
+**Hyper-V** role is used to create and manage virtual machines. While containers can run on virtual machines, Hyper-V itself is not required to run containers. 
+
+Containers and virtual machines serve different purposes and have different use cases.
+
+**.NET Framework 4.7** is a software framework developed by Microsoft that runs primarily on Microsoft Windows. 
+
+It is not required for running containerized applications unless the container specifically requires it to run a .NET application.
+
 Therefore, the correct software to install on VM1 to ensure you can run Image1 is:
 
-Docker
+**Docker**
 
 ## Question 6
 
 You have Azure subscription that includes virtual network with following subnets:
 
 Subnet1, which has connected virtual machine
+
 Subnet2, which has connected web app
+
 Subnet3, which has deployed container instance
+
 You plan to deploy container instance named container1.
 
-To which subnets can you deploy container1?
+To which subnets can you deploy container1?. Select only one answer.
 
-Select only one answer.
+- Subnet1 and Subnet3 only
 
-Subnet1 and Subnet3 only
+- Subnet1, Subnet2 and Subnet3
 
-Subnet1, Subnet2 and Subnet3
+- Subnet2 and Subnet3 only
 
-Subnet2 and Subnet3 only
+- Subnet3 only
 
-Subnet3 only
-ChatGPT
-Azure Container Instances (ACI) can be deployed into a virtual network, allowing the containers to communicate with other resources in the virtual network securely. However, Azure Container Instances deployment in a virtual network has specific requirements and limitations. One key limitation to note is that not all types of resources can coexist in the same subnet due to potential conflicts in networking and resource management.
+**Answer**
+
+Azure Container Instances (ACI) can be deployed into a virtual network, allowing the containers to communicate with other resources in the virtual network securely.
+
+However, Azure Container Instances deployment in a virtual network has specific requirements and limitations. 
+
+One key limitation to note is that not all types of resources can coexist in the same subnet due to potential conflicts in networking and resource management.
 
 Given the options:
 
-Subnet1, which has a connected virtual machine. It's possible to deploy container instances in the same virtual network as virtual machines, but typically they should be in separate subnets to avoid any network conflict and to adhere to best practices for network segmentation and management.
+**Subnet1**, which has a connected virtual machine. It's possible to deploy container instances in the same virtual network as virtual machines, but typically they should be in separate subnets to avoid any network conflict and to adhere to best practices for network segmentation and management.
 
-Subnet2, which has a connected web app. Azure Web Apps (part of Azure App Service) do not deploy directly into a subnet of a virtual network in the same way virtual machines or container instances do. Instead, they can integrate with a virtual network through service endpoints or private endpoints. This means the presence of a web app does not inherently block a subnet from being used by container instances, but the details of how the web app is connected might influence the decision.
+**Subnet2**, which has a connected web app. Azure Web Apps (part of Azure App Service) do not deploy directly into a subnet of a virtual network in the same way virtual machines or container instances do. Instead, they can integrate with a virtual network through service endpoints or private endpoints. This means the presence of a web app does not inherently block a subnet from being used by container instances, but the details of how the web app is connected might influence the decision.
 
-Subnet3, which has a deployed container instance. This indicates that the subnet is already configured to support container instances, making it a suitable location for deploying additional container instances.
+**Subnet3**, which has a deployed container instance. This indicates that the subnet is already configured to support container instances, making it a suitable location for deploying additional container instances.
 
 Considering Azure's best practices and the goal of minimizing deployment issues, the most straightforward and conflict-free option for deploying additional container instances would be in subnets already known to support them, assuming there is available address space and no conflicting network policies.
 
 Therefore, the correct answer, based on the provided information and Azure networking practices, would be:
 
-Subnet3 only
+**Subnet3 only**
 
 This choice is made with the understanding that Subnet3 is already configured and proven to support container instances, making it the safest choice for additional deployments without more specific details on the network setup and policies in place for Subnet1 and Subnet2.
 
