@@ -15,18 +15,25 @@ What is the minimum number of app service plans that should be created?
 Select only one answer.
 
 1
+
 2
+
 3
+
 4
 
 ChatGPT
+
 When deploying web apps on Azure App Service, the choice of the operating system is made at the App Service plan level, not at the individual web app level. All apps in the same App Service plan run on the same operating system. Azure App Service supports Windows and Linux operating systems, but it does not allow mixing Windows and Linux apps within the same App Service plan.
 
 Given your requirements:
 
 WebApp1 runs on Windows Server 2016.
+
 WebApp2 runs on Windows Server 2022.
+
 WebApp3 runs on Ubuntu Server (Linux).
+
 WebApp4 runs on Red Hat Enterprise Linux (RHEL).
 
 Considering the operating systems:
@@ -121,7 +128,8 @@ Production P3V3: Another Premium tier plan but with more resources than P1V2, an
 
 To minimize costs while ensuring the ability to deploy the web app to VNet1 with VNet Integration, the Production P1V2 plan is the most appropriate choice. It offers a balance between cost and the necessary features, including support for VNet Integration, without the higher costs associated with the Isolated tier or the higher-end Premium tier options.
 
-User
+## Question 4
+
 You have an Azure web service named Contoso2022 that runs in the Standard App Service plan. Contoso2022 has five deployment slots in use.
 
 A user named User1 has the Contributor role for Contoso2022.
@@ -160,7 +168,8 @@ Scale up the Contoso2022 App Service plan.
 
 This action increases the number of slots by upgrading to a higher service plan tier that supports more deployment slots, which is the fundamental requirement to allow for more slots.
 
-User
+## Question 5
+
 You have an Azure container registry that stores an image named Image1 and a Windows Server 2022 Azure virtual machine named VM1.
 
 You need to ensure that you can run Image1 in VM1.
@@ -189,7 +198,8 @@ Therefore, the correct software to install on VM1 to ensure you can run Image1 i
 
 Docker
 
-User
+## Question 6
+
 You have Azure subscription that includes virtual network with following subnets:
 
 Subnet1, which has connected virtual machine
@@ -227,7 +237,8 @@ Subnet3 only
 
 This choice is made with the understanding that Subnet3 is already configured and proven to support container instances, making it the safest choice for additional deployments without more specific details on the network setup and policies in place for Subnet1 and Subnet2.
 
-User
+## Question 7
+
 You have an Azure subscription that contains the following resources:
 
 a storage account named storage123
@@ -273,7 +284,8 @@ SubnetA, SubnetB, and SubnetC
 
 This answer assumes there are no unmentioned restrictive network policies or configurations in place that would prevent the deployment of Azure Container Instances to these subnets.
 
-User
+## Question 8
+
 You have an Azure storage account that contains a blob container named container1.
 
 You need to configure access to container1.
@@ -310,7 +322,8 @@ Microsoft Entra ID, storage key or shared access signature only
 
 This option covers the primary methods for securing and accessing Azure Storage, especially a blob container. It includes the use of Azure AD for fine-grained access control, storage account keys for full access, and shared access signatures for delegated, limited access.
 
-User
+## Question 9
+
 You have an Azure subscription that contains the following storage accounts:
 
 storage1, configured as StorageV2 kind
@@ -349,7 +362,8 @@ storage1 and storage2 only
 
 These storage accounts (StorageV2 and BlobStorage) support the application of lifecycle management policies to manage the lifecycle of blob data.
 
-User
+## Question 10
+
 You have an Azure Storage account named storage1 that is configured to use the Hot access tier.
 
 Storage1 has a container named container1 and the lifecycle management rule with following settings:
@@ -388,7 +402,8 @@ December 15
 
 This calculation is based on the assumption that the rehydration and move to the Hot tier on December 10 count as a modification, thereby resetting the lifecycle management rule's timer for moving the blob to archive storage.
 
-User
+## Question 11
+
 You have an Azure Storage account named storage1.
 
 You create the following encryption scopes for storage1:
@@ -429,7 +444,8 @@ blob only
 
 This means you can apply encryption scopes with customer-managed keys to blobs within the storage account, providing a way to use different keys for different blobs as per your security and compliance requirements.
 
-User
+## Question 12
+
 You have an Azure subscription that contains a virtual machine named VM1 and a storage account named storage1.
 
 You need to ensure that VM1 can access storage1 by using the Azure backbone.
@@ -462,7 +478,8 @@ Therefore, the correct configuration to ensure that VM1 can access storage1 by u
 
 a service endpoint
 
-User
+## Question 13
+
 You have an Azure subscription that contains a virtual network named VNET1. VNET1 uses the following address spaces:
 
 10.10.1.0/24
@@ -507,7 +524,8 @@ Therefore, the correct action to take first is to:
 
 Add a new subnet to VNET1.
 
-User
+## Question 14
+
 You have an Azure subscription that includes following resources:
 
 VNet1, a virtual network
