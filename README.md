@@ -174,9 +174,9 @@ What should you do? Select only one answer.
 
 **Answer**
 
-In Azure, the ability to create additional deployment slots for an Azure web service (App Service) is determined by two main factors: the user's permissions and the App Service plan's tier.
+In Azure, the ability to create additional deployment slots for an Azure web service (App Service) is determined by two main factors: the **user's permissions** and the **App Service plan's tier**.
 
-The number of slots available is determined by the App Service plan's tier. The Standard, Premium, and Isolated tiers support multiple deployment slots (5 for Standard, 20 for Premium, and Isolated).
+The number of slots available is determined by the App Service plan's tier. The **Standard**, **Premium**, and **Isolated** tiers support **multiple deployment slots** (5 for Standard, 20 for Premium, and Isolated).
 
 Since Contoso2022 is already in the Standard App Service plan and has five deployment slots in use, the focus shifts to how to enable User1 to create additional deployment slots beyond the current limit.
 
@@ -294,46 +294,51 @@ This choice is made with the understanding that Subnet3 is already configured an
 
 You have an Azure subscription that contains the following resources:
 
-a storage account named storage123
-a container instance named AppContainer
+- a **storage account** named storage123
+
+- a **container instance** named AppContainer
+
 The subscription contains a virtual network named VirtualNet4 that has the following subnets:
 
-SubnetA- has a Microsoft.Storage service endpoint.
-SubnetB- AppContainer is deployed to SubnetB.
-SubnetC- No resources are connected to SubnetC.
+- Subnet A - has a Microsoft.Storage service endpoint.
+
+- Subnet B - AppContainer is deployed to SubnetB.
+
+- Subnet C - No resources are connected to SubnetC.
+
 You plan to deploy an Azure container instance named container5 to VirtualNet4.
 
-To which subnets can you deploy container5?
+To which subnets can you deploy container5?. Select only one answer.
 
-Select only one answer.
+- SubnetA, SubnetB, and SubnetC
 
-SubnetA, SubnetB, and SubnetC
+- SubnetB and SubnetC only
 
-SubnetB and SubnetC only
+- SubnetB only
 
-SubnetB only
+- SubnetC only
 
-SubnetC only
-ChatGPT
+**Answer**
+
 When deploying Azure Container Instances (ACI) within a virtual network, there are specific considerations to take into account:
 
-Subnet Availability: Azure Container Instances can be deployed into any subnet within a virtual network, provided the subnet has sufficient available IP addresses and is not restricted by network policies or configurations that would prevent such deployment.
+**Subnet Availability**: Azure Container Instances can be deployed into any subnet within a virtual network, provided the subnet has sufficient available IP addresses and is not restricted by network policies or configurations that would prevent such deployment.
 
-Service Endpoints: A subnet with a service endpoint, such as Microsoft.Storage, is configured to secure and direct network traffic to a specific Azure service. This does not inherently prevent the deployment of container instances to that subnet unless the configuration or network security rules explicitly restrict such deployment.
+**Service Endpoints**: A subnet with a service endpoint, such as Microsoft.Storage, is configured to secure and direct network traffic to a specific Azure service. This does not inherently prevent the deployment of container instances to that subnet unless the configuration or network security rules explicitly restrict such deployment.
 
 Given these considerations and the scenario provided:
 
-SubnetA has a Microsoft.Storage service endpoint. This configuration is typically used to secure and optimize connectivity to Azure Storage but does not by itself prevent the deployment of other types of resources, including container instances, as long as there is no explicit network security rule or policy that blocks such deployments.
+**SubnetA** has a Microsoft.Storage service endpoint. This configuration is typically used to secure and optimize connectivity to Azure Storage but does not by itself prevent the deployment of other types of resources, including container instances, as long as there is no explicit network security rule or policy that blocks such deployments.
 
-SubnetB already has the container instance named AppContainer deployed to it. This confirms that SubnetB is configured to support container instances, and thus, it is possible to deploy additional container instances to this subnet, assuming there is sufficient IP address space available.
+**SubnetB** already has the container instance named AppContainer deployed to it. This confirms that SubnetB is configured to support container instances, and thus, it is possible to deploy additional container instances to this subnet, assuming there is sufficient IP address space available.
 
-SubnetC has no resources connected to it. The absence of connected resources or specified restrictions indicates that this subnet is also a candidate for deploying container instances, subject to the same considerations of IP address availability and absence of restrictive network policies.
+**SubnetC** has no resources connected to it. The absence of connected resources or specified restrictions indicates that this subnet is also a candidate for deploying container instances, subject to the same considerations of IP address availability and absence of restrictive network policies.
 
 Therefore, considering Azure's capabilities and assuming no restrictive network policies or lack of IP space that were not specified in the question, you can deploy container instances to any subnet in a virtual network that meets the basic requirements for hosting container instances. Based on the information provided:
 
 The correct answer is:
 
-SubnetA, SubnetB, and SubnetC
+**SubnetA, SubnetB, and SubnetC**
 
 This answer assumes there are no unmentioned restrictive network policies or configurations in place that would prevent the deployment of Azure Container Instances to these subnets.
 
@@ -343,75 +348,77 @@ You have an Azure storage account that contains a blob container named container
 
 You need to configure access to container1.
 
-Which authorization types can you use?
+Which authorization types can you use?. Select only one answer.
 
-Select only one answer.
+- Microsoft Entra ID only
 
-Microsoft Entra ID only
+- Microsoft Entra ID, shared access signature or certificate only
 
-Microsoft Entra ID, shared access signature or certificate only
+- Microsoft Entra ID, storage key or shared access signature only
 
-Microsoft Entra ID, storage key or shared access signature only
+- Microsoft Entra ID, storage key, shared access signature or certificate
 
-Microsoft Entra ID, storage key, shared access signature or certificate
+- Storage key or shared access signature only
 
-Storage key or shared access signature only
-ChatGPT
+**Answer**
+
 When configuring access to an Azure blob container such as container1, Azure provides several methods for authorizing access. The options typically include:
 
-Azure Active Directory (Azure AD) Authentication (formerly known as Microsoft Entra ID): This method uses Azure AD to manage access to Azure Storage resources. It allows for role-based access control (RBAC) and is integrated with Azure's identity management system.
+**Azure Active Directory (Azure AD) Authentication (formerly known as Microsoft Entra ID)**: This method uses Azure AD to manage access to Azure Storage resources. It allows for role-based access control (RBAC) and is integrated with Azure's identity management system.
 
-Storage Account Keys: Every Azure Storage account has two keys (key1 and key2), known as access keys or storage keys. These keys provide full access to the storage account, including all containers and blobs within it.
+**Storage Account Keys**: Every Azure Storage account has two keys (key1 and key2), known as access keys or storage keys. These keys provide full access to the storage account, including all containers and blobs within it.
 
-Shared Access Signatures (SAS): SAS tokens provide a way to grant limited access to objects in your storage account to other clients, without exposing your account key. You can control what resources the client may access, what permissions they have, and how long the SAS is valid.
+**Shared Access Signatures (SAS)**: SAS tokens provide a way to grant limited access to objects in your storage account to other clients, without exposing your account key. You can control what resources the client may access, what permissions they have, and how long the SAS is valid.
 
-Certificates: Certificates are generally not used directly for authorizing access to Azure Storage resources. Instead, they can be part of a larger authentication mechanism, for example, when setting up a service principal in Azure AD that uses a certificate for authentication. However, in the context of direct access methods provided by Azure Storage, certificates are not a standalone option.
+**Certificates**: Certificates are generally not used directly for authorizing access to Azure Storage resources. Instead, they can be part of a larger authentication mechanism, for example, when setting up a service principal in Azure AD that uses a certificate for authentication. However, in the context of direct access methods provided by Azure Storage, certificates are not a standalone option.
 
 Given the options presented for configuring access to an Azure blob container:
 
 The correct answer is:
 
-Microsoft Entra ID, storage key or shared access signature only
+**Microsoft Entra ID, storage key or shared access signature only**
 
-This option covers the primary methods for securing and accessing Azure Storage, especially a blob container. It includes the use of Azure AD for fine-grained access control, storage account keys for full access, and shared access signatures for delegated, limited access.
+This option covers the primary methods for securing and accessing Azure Storage, especially a blob container. 
+
+It includes the use of Azure AD for fine-grained access control, storage account keys for full access, and shared access signatures for delegated, limited access.
 
 ## Question 9
 
 You have an Azure subscription that contains the following storage accounts:
 
-storage1, configured as StorageV2 kind
+- storage1, configured as StorageV2 kind
 
-storage2, configured as BlobStorage kind
+- storage2, configured as BlobStorage kind
 
-storage3, configured as FileStorage kind
+- storage3, configured as FileStorage kind
 
-Which storage account or storage accounts can you use Lifecycle management?
+Which storage account or storage accounts can you use Lifecycle management?. Select only one answer.
 
-Select only one answer.
+- storage1 and storage2 only
 
-storage1 and storage2 only
+- storage1 and storage3 only
 
-storage1 and storage3 only
+- storage1 only
 
-storage1 only
+- Storage1, storage2 and storage3
 
-Storage1, storage2 and storage3
+- storage2 and storage3 only
 
-storage2 and storage3 only
-ChatGPT
-Azure Storage Lifecycle Management provides a way to automatically transition data to a cooler storage tier or delete data at the end of its lifecycle. This feature is available for block blobs, append blobs, and versioned blobs in blob storage. It's important to understand the capabilities of different storage account kinds in Azure:
+**Answer**
 
-StorageV2 (general-purpose v2): This is the latest storage account type, supporting all the latest features for blobs, files, queues, and tables, including lifecycle management policies for blob storage.
+Azure Storage Lifecycle Management provides a way to automatically transition data to a cooler storage tier or delete data at the end of its lifecycle. This feature is available for block blobs, append blobs, and versioned blobs in blob storage. 
 
-BlobStorage: This account type is specialized for storing blob data and supports lifecycle management for blobs.
+It's important to understand the capabilities of different **storage account** kinds in Azure:
 
-FileStorage: This account type is optimized for file shares and supports features specific to Azure Files. While it offers premium performance for file shares, it does not support blob lifecycle management.
+**StorageV2 (general-purpose v2)**: This is the latest storage account type, supporting all the latest features for blobs, files, queues, and tables, including lifecycle management policies for blob storage.
+
+**BlobStorage**: This account type is specialized for storing blob data and supports lifecycle management for blobs.
+
+**FileStorage**: This account type is optimized for file shares and supports features specific to Azure Files. While it offers premium performance for file shares, it does not support blob lifecycle management.
 
 Given the options and based on the availability of lifecycle management features:
 
-The correct answer is:
-
-storage1 and storage2 only
+The correct answer is: **storage1 and storage2 only**
 
 These storage accounts (StorageV2 and BlobStorage) support the application of lifecycle management policies to manage the lifecycle of blob data.
 
@@ -421,62 +428,70 @@ You have an Azure Storage account named storage1 that is configured to use the H
 
 Storage1 has a container named container1 and the lifecycle management rule with following settings:
 
-Move blob to cool storage: Selected
-Days after last modification: 3
-Move blob to archive storage: Selected
-Days after last modification: 5
-On December 1, you create a file named File1 in container1.
+- Move blob to cool storage: Selected
 
-On December 10, you rehydrate File1 and move the file to the Hot access tier.
+- Days after last modification: 3
 
-When will File1 be moved to archive storage?
+- Move blob to archive storage: Selected
 
-Select only one answer.
+- Days after last modification: 5
 
-on December 15
+- On December 1, you create a file named File1 in container1.
 
-on December 18
+- On December 10, you rehydrate File1 and move the file to the Hot access tier.
 
-on January 1
+When will File1 be moved to archive storage?. Select only one answer.
 
-within 24 hours
-ChatGPT
-The lifecycle management policy you've described for storage1 specifies that blobs will be moved to cool storage 3 days after the last modification and to archive storage 5 days after the last modification. However, the movement between tiers (from hot to cool to archive) and any manual modifications to the blob's tier reset the modification date for the purpose of lifecycle management rules.
+- on December 15
+
+- on December 18
+
+- on January 1
+
+- within 24 hours
+
+**Answer**
+
+The lifecycle management policy you've described for storage1 specifies that blobs will be moved to cool storage 3 days after the last modification and to archive storage 5 days after the last modification.
+
+However, the movement between tiers (from hot to cool to archive) and any manual modifications to the blob's tier reset the modification date for the purpose of lifecycle management rules.
 
 Given the scenario:
 
 December 1: File1 is created in container1, starting in the Hot access tier because storage1 uses the Hot access tier by default.
-December 10: You rehydrate File1 and move it to the Hot access tier. This action resets the "last modification" date for the purpose of the lifecycle management policy. The lifecycle management policy looks at the last modification date to determine when to move blobs to a different access tier.
+
+December 10: You rehydrate File1 and move it to the Hot access tier. This action resets the "last modification" date for the purpose of the lifecycle management policy. 
+
+The lifecycle management policy looks at the last modification date to determine when to move blobs to a different access tier.
+
 The policy for moving blobs to archive storage triggers 5 days after the last modification. Since the last modification (rehydration and move to Hot) occurred on December 10, File1 would be scheduled to move to archive storage 5 days later.
 
-Therefore, File1 will be moved to archive storage on:
-
-December 15
+Therefore, File1 will be moved to archive storage on: **December 15**
 
 This calculation is based on the assumption that the rehydration and move to the Hot tier on December 10 count as a modification, thereby resetting the lifecycle management rule's timer for moving the blob to archive storage.
 
 ## Question 11
 
-You have an Azure Storage account named storage1.
+You have an Azure Storage account named storage1. You create the following encryption scopes for storage1:
 
-You create the following encryption scopes for storage1:
+- Scope1 that has an encryption type of Microsoft-managed keys
 
-Scope1 that has an encryption type of Microsoft-managed keys
-Scope2 that has an encryption type of Customer-managed keys
-Which storage services can be used with Scope2?
+- Scope2 that has an encryption type of Customer-managed keys
 
-Select only one answer.
+Which storage services can be used with Scope2?. Select only one answer.
 
-blob and file only
+- blob and file only
 
-blob, file, table, and queue
+- blob, file, table, and queue
 
-blob only
+- blob only
 
-file only
+- file only
 
-table and queue only
-ChatGPT
+- table and queue only
+
+**Answer**
+
 Encryption scopes in Azure Storage provide a way to ensure that different blobs within the same storage account can be encrypted with different keys. This feature is particularly useful when you have varying requirements for key management across different sets of data within a single storage account.
 
 As of the last update before my last training cut-off in April 2023:
